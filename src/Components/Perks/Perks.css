@@ -1,0 +1,60 @@
+.top-bar {
+  grid-area: top-bar;
+  margin-top: 1%;
+  float: left;
+}
+.side-bar {
+  grid-area: side-bar;
+  margin-left: 5%;
+  justify-self: right;
+}
+.main-screen {
+  grid-area: main-screen;
+}
+.perk-counter {
+  grid-area: perk-counter;
+}
+.Perks {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+
+  grid-template-areas:
+    ". top-bar ."
+    "side-bar main-screen perk-counter"
+    "side-bar main-screen .";
+}
+
+#canvas {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#image {
+  position: fixed;
+  z-index: 1;
+}
+
+
+.perk-counter textarea{
+  width: 80%;
+  height: 10em;
+}
+
+.main-screen map{
+  position: relative;
+  width: 0px;
+  height: 0px;
+}
+
+.main-screen map div{
+  position: relative;
+  width: 0px;
+  height: 0px;
+}
+.special-perk{
+  z-index: 3;
+}

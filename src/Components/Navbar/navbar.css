@@ -1,0 +1,81 @@
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #222;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    color: white;
+    text-transform: uppercase;
+    overflow: hidden;
+    width: 600px;
+  }
+  .navbar .logoWrapper {
+    display: flex;
+  }
+  .navbar .logoWrapper .stylish {
+    font-weight: bold;
+  }
+  .navbar .logoWrapper .logo {
+    padding-left: 4px;
+    color: #ea4f4c;
+  }
+  .navbar .navigation {
+    display: flex;
+    list-style-type: none;
+  }
+  .navbar .navigation li {
+    opacity: 1;
+    list-style-type: none;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar .navigation .parent {
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  .navbar .navigation .parent .link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    color: white;
+  }
+  .navbar .navigation .parent .link:hover {
+    color: #ea4f4c;
+  }
+  .navbar .navigation .parent .link .fa-minus {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: -16px;
+    top: 3px;
+  }
+  .navbar .navigation .parent .link .fa-plus {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar .navigation .parent .link .fas {
+    color: #ea4f4c;
+    margin: -2px 4px 0;
+    font-size: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar .navigation .subnavigation {
+    display: none;
+    list-style-type: none;
+    width: 500px;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #222;
+  }
+  .navbar .navigation .subnavigation li a {
+    font-size: 17px;
+    padding: 0 5px;
+  }

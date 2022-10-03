@@ -1,0 +1,12 @@
+.Import {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+.Import textarea {
+  width: 80%;
+  height: 10em;
+  overflow: auto;
+}

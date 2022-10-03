@@ -1,0 +1,35 @@
+.hero-list {
+  display: grid;
+  grid-area: hero-list;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . .";
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+.hero-select {
+  grid-area: hero-select;
+  display: grid;
+  grid-template-areas: ". . . .";
+  gap: 0px 50px;
+  justify-content: center;
+  align-content: center;
+}
+
+.Heroes {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1.5fr 1fr;
+
+  grid-template-areas: "hero-list hero-select";
+}
+
+
+.hero-pos button {
+  display: block;
+}

@@ -1,0 +1,12 @@
+.Notes {
+  width: 90vw;
+  height: 90vh;
+  margin: 1%;
+  margin-right: 5%;
+}
+
+
+
+*[class^='ql']{
+  overflow: visible;
+}
