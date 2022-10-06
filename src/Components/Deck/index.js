@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
 import Card from "../Card";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,10 +18,15 @@ export function DeckSimpleView({ heroPos, act }) {
     hero[heroPos].substring(1, hero[heroPos].length);
   const canvasRef = useRef();
   const [imgsLoaded, setImgsLoaded] = useState(false);
-  let imgs = [{ id: "banner", url: images["bg/banner-cards-vertical.png"] }];
-  for (const i of Array.from(Array(10).keys())) {
-    imgs.push({ id: i, url: images["bg/mana-" + i + ".png"] });
-  }
+  const imgs = useMemo(() => {
+    let tmpArr = [];
+    tmpArr.push({ id: "banner", url: images["bg/banner-cards-vertical.png"] });
+    for (const i of Array.from(Array(10).keys())) {
+      tmpArr.push({ id: i, url: images["bg/mana-" + i + ".png"] });
+    }
+    return tmpArr;
+  }, []);
+
   const [imgObjs, setImgObjs] = useState([]);
   const [rects, setRects] = useState([]);
 
@@ -33,10 +38,6 @@ export function DeckSimpleView({ heroPos, act }) {
       loadImg.onerror = (err) => reject(err);
     });
   };
-
-  function getImgObj(id) {
-    return imgObjs.filter((x) => x.id === id)[0]["obj"];
-  }
 
   function handleCanvasClick(e) {
     const rect = canvasRef.current.getBoundingClientRect();
@@ -56,6 +57,7 @@ export function DeckSimpleView({ heroPos, act }) {
   }
 
   useEffect(() => {
+    const getImgObj = (id) => imgObjs.filter((x) => x.id === id)[0]["obj"];
     Promise.all(imgs.map((img) => loadImage(img)))
       .then((im) => {
         setImgsLoaded(true);
@@ -98,7 +100,7 @@ export function DeckSimpleView({ heroPos, act }) {
         cnt++;
       }
     }
-  }, [imgsLoaded, deck]);
+  }, [imgsLoaded, deck, imgObjs, heroName, imgs]);
   return (
     <div className="deck-container">
       <div className="simple-deck">
