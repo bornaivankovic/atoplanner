@@ -10,10 +10,15 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
+
+@font-face {
+  font-family: "cantora";
+  src: url(./res/fonts/CantoraOne-Regular.ttf) format("truetype");
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "cantora", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(4, 36, 124);
@@ -24,11 +29,6 @@ body {
   );
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 html {

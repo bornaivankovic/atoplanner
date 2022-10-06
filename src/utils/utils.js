@@ -1,10 +1,10 @@
 import { Buffer } from "buffer";
 import { initialHeroPerks } from "../Redux/Reducers/Perks";
-import { cards, heroes, perks } from "./library";
+import { cardClasses, cards, heroClasses, heroes, perks } from "./library";
 const zlib = require("react-zlib-js");
 
 export function getCardClass(cardName) {
-  for (const cls of ["healer", "warrior", "scout", "mage", "enchantment"]) {
+  for (const cls of cardClasses) {
     for (const c of cards[cls]) {
       if (c["name"] === cardName) {
         return cls;
@@ -14,7 +14,7 @@ export function getCardClass(cardName) {
 }
 
 export function getHeroClass(hero) {
-  for (const cls of ["healer", "warrior", "scout", "mage"]) {
+  for (const cls of heroClasses) {
     for (const h of heroes[cls]) {
       if (h === hero) {
         return cls;
@@ -72,6 +72,8 @@ function importAll(r) {
 export const images = importAll(
   require.context("../res", true, /\.(png|jpe?g|svg)$/)
 );
+
+export const fonts = importAll(require.context("../res", true, /\.(ttf)$/));
 
 export function typeToPoints(type) {
   if (type.startsWith("normal")) {

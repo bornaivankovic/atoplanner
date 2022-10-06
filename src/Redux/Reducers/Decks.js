@@ -11,7 +11,15 @@ export const decksSlice = createSlice({
   name: "decks",
   initialState,
   reducers: {
-    resetDecksState: () =>  initialState,
+    resetDecksState: () => initialState,
+    resetDeckHeroPos: (state, action) => {
+      state[action.payload.heroPos] = {
+        Act1: [],
+        Act2: [],
+        Act3: [],
+        Act4: [],
+      };
+    },
     addCardToDeck: (state, action) => {
       state[action.payload.heroPos][action.payload.act].push(
         action.payload.card
@@ -25,5 +33,10 @@ export const decksSlice = createSlice({
     },
   },
 });
-export const { resetDecksState, addCardToDeck, removeCardFromDeck } = decksSlice.actions;
+export const {
+  resetDecksState,
+  resetDeckHeroPos,
+  addCardToDeck,
+  removeCardFromDeck,
+} = decksSlice.actions;
 export default decksSlice.reducer;

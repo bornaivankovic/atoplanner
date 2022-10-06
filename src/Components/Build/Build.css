@@ -2,8 +2,13 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 0.8fr 2fr;
+  grid-template-columns: 0.8fr 2fr auto;
   grid-template-rows: 0.8fr 2fr;
   
-  grid-template-areas: "search deck" "lister deck";
+  grid-template-areas: "search deck deck" "lister deck deck";
+}
+
+.simple{
+  display: block;
+  height: 200px;
 }

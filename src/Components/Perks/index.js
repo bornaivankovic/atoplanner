@@ -104,7 +104,7 @@ class PerkArea extends React.Component {
         <span>
           <h2>
             {this.props.perk.name[0].toUpperCase() +
-              this.props.perk.name.substr(1, this.props.perk.name.length)}
+              this.props.perk.name.substring(1, this.props.perk.name.length)}
           </h2>
           <br />
         </span>
@@ -128,7 +128,7 @@ class PerkArea extends React.Component {
           <div {...props} ref={ref}>
             <h2>
               {this.props.perk.name[0].toUpperCase() +
-                this.props.perk.name.substr(1, this.props.perk.name.length)}
+                this.props.perk.name.substring(1, this.props.perk.name.length)}
             </h2>
             {lmoa.map((x, i) => (
               <Tooltip key={nanoid()} placement="top" title={x.desc}>

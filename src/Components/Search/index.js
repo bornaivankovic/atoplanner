@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -6,6 +7,7 @@ import {
   selectTerm,
   setTerm,
 } from "../../Redux/Reducers/Search";
+import { cardClasses } from "../../utils/library";
 import "./search.css";
 
 const Search = () => {
@@ -30,16 +32,17 @@ const Search = () => {
       value={cls}
     >
       <option value="unset">Unset</option>
-      <option value="warrior">Warrior</option>
-      <option value="scout">Scout</option>
-      <option value="mage">Mage</option>
-      <option value="healer">Healer</option>
-      <option value="enchantment">Enchantment</option>
+      {cardClasses.map((x) => (
+        <option value={x}>
+          {x[0].toUpperCase() + x.substring(1, x.length)}
+        </option>
+      ))}
     </select>
   );
 
   return (
     <div className="search">
+      {/* TODO mui text field */}
       <input
         type="text"
         placeholder="Type card name"
@@ -47,6 +50,7 @@ const Search = () => {
           dispatch(setTerm({ term: value.toLowerCase() }));
         }}
       />
+      {/* TODO mui select */}
       <table>
         <tbody>
           <tr>
@@ -56,14 +60,15 @@ const Search = () => {
         </tbody>
       </table>
 
-      <button
+      <Button
+        variant="contained"
         className="search-button"
         onClick={() => {
           update();
         }}
       >
         Search
-      </button>
+      </Button>
     </div>
   );
 };

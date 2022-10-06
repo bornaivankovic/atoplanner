@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Heroes.css";
 import { selectHero, selectSelectedHeroes } from "../../Redux/Reducers/Heroes";
 import { Button } from "@mui/material";
+import { resetDeckHeroPos } from "../../Redux/Reducers/Decks";
 
 class HeroList extends React.Component {
   onDragStart(e, hero) {
@@ -73,6 +74,9 @@ class HeroSelect extends React.Component {
   onDrop(event, dest) {
     this.props.dispatch(
       selectHero({ pos: dest, hero: event.dataTransfer.getData("hero") })
+    );
+    this.props.dispatch(
+      resetDeckHeroPos({ heroPos: dest})
     );
   }
   onDragOver(e) {

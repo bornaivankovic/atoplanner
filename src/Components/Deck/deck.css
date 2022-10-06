@@ -1,10 +1,9 @@
 .deck-container {
     grid-area: deck;
     
-    /* display: flex;
-    flex-direction: column; */
     padding: 20px;
     border: 1px solid #001B0C;
+    margin-right: 5%;
 }
 
 .deck {
@@ -19,3 +18,10 @@
     margin-bottom: 5px;
     float: left;
 }
+
+
+.simple-deck{
+    grid-area: deck;
+}
+
+

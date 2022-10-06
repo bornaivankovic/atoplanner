@@ -482,6 +482,32 @@ const enchantmentCards = [
   { rarity: "rare", mana: 1, name: "Yang Ritual" },
   { rarity: "rare", mana: 1, name: "Yin Ritual" },
 ];
+const boonCards = [
+  { name: "Arena Champion", rarity: "rare", mana: 0 },
+  { name: "Catharsis", rarity: "mythic", mana: 0 },
+  { name: "Child of the Storm", rarity: "rare", mana: 0 },
+  { name: "Custodian", rarity: "uncommon", mana: 0 },
+  { name: "Dark Miasma", rarity: "epic", mana: 0 },
+  { name: "Enlightened", rarity: "epic", mana: 0 },
+  { name: "Friendly Tadpole", rarity: "epic", mana: 0 },
+  { name: "Heat Surge", rarity: "rare", mana: 0 },
+  { name: "Honorable", rarity: "rare", mana: 0 },
+  { name: "Merciful", rarity: "rare", mana: 0 },
+  { name: "Merciless", rarity: "rare", mana: 0 },
+  { name: "Owl Blessing", rarity: "rare", mana: 0 },
+  { name: "Take Cover", rarity: "uncommon", mana: 0 },
+  { name: "Trustworthy", rarity: "rare", mana: 0 },
+  { name: "Well Fed", rarity: "rare", mana: 0 },
+];
+
+export const cardClasses = [
+  "healer",
+  "warrior",
+  "scout",
+  "mage",
+  "enchantment",
+  "boon",
+];
 
 export const cards = {
   healer: healerCards,
@@ -489,6 +515,15 @@ export const cards = {
   scout: scoutCards,
   mage: mageCards,
   enchantment: enchantmentCards,
+  boon: boonCards,
+  colors: {
+    healer: "#897d6d",
+    warrior: "#911d1d",
+    scout: "#2b5a28",
+    mage: "#2b5689",
+    enchantment: "#af8449",
+    boon: "#23b4b8",
+  },
   all: function () {
     return [
       ...healerCards,
@@ -496,6 +531,7 @@ export const cards = {
       ...scoutCards,
       ...mageCards,
       ...enchantmentCards,
+      ...boonCards,
     ];
   },
 };
@@ -1351,6 +1387,8 @@ export const perks = {
     ],
   },
 };
+
+export const heroClasses = ["healer", "warrior", "scout", "mage"];
 
 export const heroes = {
   warrior: ["magnus", "heiner", "grukli", "bree"],
